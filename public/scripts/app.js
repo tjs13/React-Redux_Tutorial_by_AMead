@@ -8,7 +8,7 @@ console.log("App.js is running");
 
 var app = {
   title: "Indecision App",
-  subtitle: "Let programmers who code computers control your life",
+  subtitle: "Let programmers who code computers control your life!",
   options: ["One", "Two"]
 
   // JSX - JavaScript XML
@@ -45,42 +45,4 @@ var app = {
     )
   )
 );
-
-var user = {
-  name: "Ryu",
-  age: 19,
-  location: "Honshu"
-};
-
-function getLocation(location) {
-  // if location exists, return location; else return "unknown"
-  if (location) {
-    return React.createElement(
-      "p",
-      null,
-      "Location: ",
-      location
-    );
-  }
-}
-
-var templateTwo = React.createElement(
-  "div",
-  null,
-  React.createElement(
-    "h1",
-    null,
-    user.name ? user.name : "Anonymous"
-  ),
-  user.age && user.age >= 18 && React.createElement(
-    "p",
-    null,
-    "Age: ",
-    user.age
-  ),
-  getLocation(user.location)
-);
-
 var appRoot = document.getElementById("app");
-
-ReactDOM.render(template, appRoot);

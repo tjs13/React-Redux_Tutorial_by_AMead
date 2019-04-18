@@ -6,7 +6,7 @@ console.log("App.js is running");
 
 const app = {
   title: "Indecision App",
-  subtitle: "Let programmers who code computers control your life",
+  subtitle: "Let programmers who code computers control your life!",
   options: ["One", "Two"]
 }
 
@@ -24,28 +24,4 @@ const template = (
     </ol>
   </div>
 );
-
-const user = {
-  name: "Ryu",
-  age: 19,
-  location: "Honshu"
-}
-
-function getLocation(location) {
-  // if location exists, return location; else return "unknown"
-  if(location) {
-    return <p>Location: {location}</p>;
-  }
-}
-
-const templateTwo = (
-  <div>
-    <h1>{user.name ? user.name : "Anonymous"}</h1>
-    {(user.age && user.age >= 18) && <p>Age: {user.age}</p>}
-    {getLocation(user.location)}
-  </div>
-);
-
-var appRoot = document.getElementById("app");
-
-ReactDOM.render(template, appRoot);
+const appRoot = document.getElementById("app");
