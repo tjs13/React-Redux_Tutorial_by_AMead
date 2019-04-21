@@ -4,39 +4,44 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Author = function () {
-  function Author() {
-    var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "Anonymous";
-    var age = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-    _classCallCheck(this, Author);
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-    this.name = name;
-    this.age = age;
+var Header = function (_React$Component) {
+  _inherits(Header, _React$Component);
+
+  function Header() {
+    _classCallCheck(this, Header);
+
+    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
   }
 
-  _createClass(Author, [{
-    key: "getGreeting",
-    value: function getGreeting() {
-      // return "Hi, " + this.name + "!";
-      return "Hi, I am " + this.name + "!";
-    }
-  }, {
-    key: "getDescription",
-    value: function getDescription() {
-      return "My age is " + this.age + ".";
+  _createClass(Header, [{
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "p",
+        null,
+        "This is from Header"
+      );
     }
   }]);
 
-  return Author;
-}();
+  return Header;
+}(React.Component);
 
-var Poet = function Poet() {
-  _classCallCheck(this, Poet);
-};
+var jsx = React.createElement(
+  "div",
+  null,
+  React.createElement(
+    "h1",
+    null,
+    "Title"
+  ),
+  React.createElement(Header, null),
+  React.createElement(Header, null),
+  React.createElement(Header, null)
+);
 
-var person = new Author("Ernest Hemingway");
-console.log(person.getGreeting(), person.getDescription());
-
-var other = new Author("Roxanne Gay", 34);
-console.log(other.getGreeting(), other.getDescription());
+ReactDOM.render(jsx, document.getElementById("app"));

@@ -1,4 +1,4 @@
-class Author {
+class Person {
   constructor(name = "Anonymous", age = 0) {
     this.name = name;
     this.age = age;
@@ -8,16 +8,44 @@ class Author {
     return `Hi, I am ${this.name}!`
   }
   getDescription() {
-    return `My age is ${this.age}.`
+    return `I am ${this.name}! My age is ${this.age}.`
   }
 }
 
-class Poet {
-  
+class Student extends Person {
+  constructor(name, age, book) {
+    super(name, age);
+    this.book = book;
+  }
+  isPreviouslyPublished() {
+    return !!this.book;
+  }
+  getDescription() {
+    let description = super.getDescription();
+    if(this.isPreviouslyPublished()) {
+      description += ` Their book is ${this.book}.`;
+    }
+    return description;
+  }
 }
 
-const person = new Author("Ernest Hemingway");
-console.log(person.getGreeting(), person.getDescription());
+class Traveler extends Person {
+  constructor(name, age, homeLocation) {
+    super(name, age);
+    this.homeLocation = homeLocation;
+  }
+  getGreeting() {
+    let location = super.getGreeting();
+    if(this.homeLocation) {
+      location += ` I am from ${this.homeLocation}.`
+    }
+    return location;
+  }
+}
 
-const other = new Author("Roxanne Gay", 34);
-console.log(other.getGreeting(), other.getDescription());
+const ernest = new Student("Ernest Hemingway", 54, "For Whom the Bell Tolls");
+console.log(ernest.getDescription());
+
+const chen = new Traveler("Chen Chen", 30, "China");
+console.log(chen.getGreeting());
+
