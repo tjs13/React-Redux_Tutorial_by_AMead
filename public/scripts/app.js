@@ -1,48 +1,42 @@
 "use strict";
 
-console.log("App.js is running");
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-// if statements
-// ternary operators
-// logical and operator
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var app = {
-  title: "Indecision App",
-  subtitle: "Let programmers who code computers control your life!",
-  options: ["One", "Two"]
+var Author = function () {
+  function Author() {
+    var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "Anonymous";
+    var age = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
 
-  // JSX - JavaScript XML
-};var template = React.createElement(
-  "div",
-  null,
-  React.createElement(
-    "h1",
-    null,
-    app.title
-  ),
-  app.subtitle && React.createElement(
-    "p",
-    null,
-    app.subtitle
-  ),
-  React.createElement(
-    "p",
-    null,
-    app.options.length > 0 ? "Here are your options" : "No options"
-  ),
-  React.createElement(
-    "ol",
-    null,
-    React.createElement(
-      "li",
-      null,
-      "Item 1"
-    ),
-    React.createElement(
-      "li",
-      null,
-      "Item 2"
-    )
-  )
-);
-var appRoot = document.getElementById("app");
+    _classCallCheck(this, Author);
+
+    this.name = name;
+    this.age = age;
+  }
+
+  _createClass(Author, [{
+    key: "getGreeting",
+    value: function getGreeting() {
+      // return "Hi, " + this.name + "!";
+      return "Hi, I am " + this.name + "!";
+    }
+  }, {
+    key: "getDescription",
+    value: function getDescription() {
+      return "My age is " + this.age + ".";
+    }
+  }]);
+
+  return Author;
+}();
+
+var Poet = function Poet() {
+  _classCallCheck(this, Poet);
+};
+
+var person = new Author("Ernest Hemingway");
+console.log(person.getGreeting(), person.getDescription());
+
+var other = new Author("Roxanne Gay", 34);
+console.log(other.getGreeting(), other.getDescription());
