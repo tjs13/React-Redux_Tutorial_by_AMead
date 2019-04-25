@@ -1,13 +1,13 @@
 class IndecisionApp extends React.Component {
   render() {
-    const title = "Indecision App";
-    const subtitle = "Read more good books!";
-    const options = ["Thing 1", "Thing 2", "Thing 3"]
+    const titleVar = "Indecision App";
+    const subtitleVar = "Read more good books!";
+    const optionsVar = ["Thing 1", "Thing 2", "Thing 3"]
     return (
       <div>
-        <Header title={title} subtitle={subtitle}/>
+        <Header title={titleVar} subtitle={subtitleVar}/>
         <Action />
-        <Options options={options}/>
+        <Options options={optionsVar}/>
         <AddOption />
       </div>
     );
@@ -18,8 +18,8 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        <h1>{this.props.title}</h1>
-        <h2>{this.props.subtitle}</h2>
+        <h1>{this.props.titleVar}</h1>
+        <h2>{this.props.subtitleVar}</h2>
       </div>
     )
   }
